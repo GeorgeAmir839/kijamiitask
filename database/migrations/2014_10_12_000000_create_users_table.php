@@ -17,6 +17,13 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('user_type')->default('player');
+            // $table->foreignId('team_id')->constrained()->references('id')->on('teams')
+            // ->nullable(); 
+            // $table->foreignId('team_id')->constrained()->references('id')->on('teams')
+            // ->nullable()->onDelete('cascade')
+            // ->onUpdate('cascade'); 
+            $table->string('number_of_goals')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
