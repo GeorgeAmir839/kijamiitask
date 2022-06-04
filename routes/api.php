@@ -22,6 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
+Route::post('player/login', 'API\PlayerController@login');
+Route::post('player/register', 'API\PlayerController@register');
 Route::post('logout', 'API\UserController@logout');
 
 Route::middleware('auth:api')->group(function () {
