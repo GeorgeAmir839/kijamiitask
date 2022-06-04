@@ -5,12 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contest extends Model
+class Result extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function referees()
-    {
-        return $this->hasMany(Referee::class);
-    }
 }

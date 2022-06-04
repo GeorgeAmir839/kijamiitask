@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contest extends Model
+class Referee extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function referees()
+
+    public function contest()
     {
-        return $this->hasMany(Referee::class);
+        return $this->belongsTo(contest::class);
     }
 }

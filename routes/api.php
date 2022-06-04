@@ -17,3 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+// Route::apiResource('Leagues', 'API\BannerController')->only('index');
+// Route::apiResource('leagues', [App\Http\Controllers\API\LeagueController::class]);
+
+Route::post('login', 'API\UserController@login');
+Route::post('register', 'API\UserController@register');
+
+Route::apiResource('leagues', 'API\LeagueController');
+Route::get('leagues/details/{id}', 'API\LeagueController@leaguesDetails')->name('leagues.details');
+
+Route::apiResource('teams', 'API\TeamController');
+Route::get('teams/details/{id}', 'API\TeamController@teamsDetails')->name('teams.details');
+
+Route::apiResource('contests', 'API\ContestController');
+Route::get('contests/details/{id}', 'API\ContestController@contestsDetails')->name('contests.details');
+
+Route::apiResource('players', 'API\PlayerController');
+Route::get('players/details/{id}', 'API\PlayerController@playersDetails')->name('players.details');
+
